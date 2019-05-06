@@ -79,125 +79,124 @@ def reload_natlink():
     Pause("10").execute()
     win.set_foreground()
 
-
 # For repeating of characters.
-specialCharMap = {
-    "(bar|vertical bar|pipe)": "|",
-    "(dash|minus|hyphen)": "-",
-    "(dot|period)": ".",
-    "comma": ",",
-    "backslash": "\\",
-    "underscore": "_",
-    "(star|asterisk)": "*",
-    "colon": ":",
-    "(semicolon|semi-colon)": ";",
-    "at": "@",
-    "[double] quote": '"',
-    "single quote": "'",
-    "hash": "#",
-    "dollar": "$",
-    "percent": "%",
-    "and": "&",
-    "slash": "/",
-    "equal": "=",
-    "plus": "+",
-    "space": " "
-}
+# specialCharMap = {
+#     "(bar|vertical bar|pipe)": "|",
+#     "(dash|minus|hyphen)": "-",
+#     "(dot|period)": ".",
+#     "comma": ",",
+#     "backslash": "\\",
+#     "underscore": "_",
+#     "(star|asterisk)": "*",
+#     "colon": ":",
+#     "(semicolon|semi-colon)": ";",
+#     "at": "@",
+#     "[double] quote": '"',
+#     "single quote": "'",
+#     "hash": "#",
+#     "dollar": "$",
+#     "percent": "%",
+#     "and": "&",
+#     "slash": "/",
+#     "equal": "=",
+#     "plus": "+",
+#     "space": " "
+# }
 
 # Modifiers for the press-command.
-modifierMap = {
-    "alt": "a",
-    "control": "c",
-    "shift": "s",
-    "super": "w",
-}
+# modifierMap = {
+#     "alt": "a",
+#     "control": "c",
+#     "shift": "s",
+#     "super": "w",
+# }
 
 # Modifiers for the press-command, if only the modifier is pressed.
-singleModifierMap = {
-    "alt": "alt",
-    "control": "ctrl",
-    "shift": "shift",
-    "super": "win",
-}
+# singleModifierMap = {
+#     "alt": "alt",
+#     "control": "ctrl",
+#     "shift": "shift",
+#     "super": "win",
+# }
 
-letterMap = {
-    "(A|alpha)": "a",
-    "(B|bravo) ": "b",
-    "(C|charlie) ": "c",
-    "(D|delta) ": "d",
-    "(E|echo) ": "e",
-    "(F|foxtrot) ": "f",
-    "(G|golf) ": "g",
-    "(H|hotel) ": "h",
-    "(I|india|indigo) ": "i",
-    "(J|juliet) ": "j",
-    "(K|kilo) ": "k",
-    "(L|lima) ": "l",
-    "(M|mike) ": "m",
-    "(N|november) ": "n",
-    "(O|oscar) ": "o",
-    "(P|papa|poppa) ": "p",
-    "(Q|quebec|quiche) ": "q",
-    "(R|romeo) ": "r",
-    "(S|sierra) ": "s",
-    "(T|tango) ": "t",
-    "(U|uniform) ": "u",
-    "(V|victor) ": "v",
-    "(W|whiskey) ": "w",
-    "(X|x-ray) ": "x",
-    "(Y|yankee) ": "y",
-    "(Z|zulu) ": "z",
-}
+# letterMap = {
+#     "(A|alpha)": "a",
+#     "(B|bravo) ": "b",
+#     "(C|charlie) ": "c",
+#     "(D|delta) ": "d",
+#     "(E|echo) ": "e",
+#     "(F|foxtrot) ": "f",
+#     "(G|golf) ": "g",
+#     "(H|hotel) ": "h",
+#     "(I|india|indigo) ": "i",
+#     "(J|juliet) ": "j",
+#     "(K|kilo) ": "k",
+#     "(L|lima) ": "l",
+#     "(M|mike) ": "m",
+#     "(N|november) ": "n",
+#     "(O|oscar) ": "o",
+#     "(P|papa|poppa) ": "p",
+#     "(Q|quebec|quiche) ": "q",
+#     "(R|romeo) ": "r",
+#     "(S|sierra) ": "s",
+#     "(T|tango) ": "t",
+#     "(U|uniform) ": "u",
+#     "(V|victor) ": "v",
+#     "(W|whiskey) ": "w",
+#     "(X|x-ray) ": "x",
+#     "(Y|yankee) ": "y",
+#     "(Z|zulu) ": "z",
+# }
 
-numberMap = {
-    "zero": "0",
-    "one": "1",
-    "two": "2",
-    "three": "3",
-    "four": "4",
-    "five": "5",
-    "six": "6",
-    "seven": "7",
-    "eight": "8",
-    "nine": "9",
-}
+# numberMap = {
+#     "zero": "0",
+#     "one": "1",
+#     "two": "2",
+#     "three": "3",
+#     "four": "4",
+#     "five": "5",
+#     "six": "6",
+#     "seven": "7",
+#     "eight": "8",
+#     "nine": "9",
+# }
 
-controlKeyMap = {
-    "left": "left",
-    "right": "right",
-    "up": "up",
-    "down": "down",
-    "page up": "pgup",
-    "page down": "pgdown",
-    "home": "home",
-    "end": "end",
-    "space": "space",
-    "(enter|return)": "enter",
-    "escape": "escape",
-    "tab": "tab"
-}
+# controlKeyMap = {
+#     "left": "left",
+#     "right": "right",
+#     "up": "up",
+#     "down": "down",
+#     "page up": "pgup",
+#     "page down": "pgdown",
+#     "home": "home",
+#     "end": "end",
+#     "space": "space",
+#     "(enter|return)": "enter",
+#     "escape": "escape",
+#     "tab": "tab"
+# }
 
 # F1 to F12.
-functionKeyMap = {
-    'F one': 'f1',
-    'F two': 'f2',
-    'F three': 'f3',
-    'F four': 'f4',
-    'F five': 'f5',
-    'F six': 'f6',
-    'F seven': 'f7',
-    'F eight': 'f8',
-    'F nine': 'f9',
-    'F ten': 'f10',
-    'F eleven': 'f11',
-    'F twelve': 'f12',
-}
+# functionKeyMap = {
+#     'F one': 'f1',
+#     'F two': 'f2',
+#     'F three': 'f3',
+#     'F four': 'f4',
+#     'F five': 'f5',
+#     'F six': 'f6',
+#     'F seven': 'f7',
+#     'F eight': 'f8',
+#     'F nine': 'f9',
+#     'F ten': 'f10',
+#     'F eleven': 'f11',
+#     'F twelve': 'f12',
+# }
 
-pressKeyMap = {}
-pressKeyMap.update(letterMap)
-pressKeyMap.update(numberMap)
-pressKeyMap.update(controlKeyMap)
-pressKeyMap.update(functionKeyMap)
+# pressKeyMap = {}
+# pressKeyMap.update(letterMap)
+# pressKeyMap.update(numberMap)
+# pressKeyMap.update(controlKeyMap)
+# pressKeyMap.update(functionKeyMap)
 
 formatMap = {
     "camel case": ft.camelCase,
@@ -223,6 +222,7 @@ formatMap = {
     "say": ft.spokenForm,
     "environment variable": [ft.snakeCase, ft.upperCase],
 }
+
 
 # abbreviationMap = {
 #     "administrator": "admin",
@@ -423,6 +423,48 @@ grammarCfg.cmd.map = Item(
         # "release control": Key("ctrl:up"),
         # "release [all]": release,
 
+        # function keys
+        "F one": Key("f1"),
+        "F two": Key("f2"),
+        "F three": Key("f3"),
+        "F four": Key("f4"),
+        "F five": Key("f5"),
+        "F six": Key("f6"),
+        "F Seven": Key("f7"),
+        "F eight": Key("f8"),
+        "F nine": Key("f9"),
+        "F ten": Key("f10"),
+        "F eleven": Key("f11"),
+        "F 12": Key("f12"),
+
+        # letters
+        "(A|alpha)": Text("a"),
+        "(B|bravo) ": Text("b"),
+        "(C|charlie) ": Text("c"),
+        "(D|delta) ": Text("d"),
+        "(E|echo) ": Text("e"),
+        "(F|foxtrot) ": Text("f"),
+        "(G|golf) ": Text("g"),
+        "(H|hotel) ": Text("h"),
+        "(I|india|indigo) ": Text("i"),
+        "(J|juliet) ": Text("j"),
+        "(K|kilo) ": Text("k"),
+        "(L|lima) ": Text("l"),
+        "(M|mike) ": Text("m"),
+        "(N|november) ": Text("n"),
+        "(O|oscar) ": Text("o"),
+        "(P|papa|poppa) ": Text("p"),
+        "(Q|quebec|quiche) ": Text("q"),
+        "(R|romeo) ": Text("r"),
+        "(S|sierra) ": Text("s"),
+        "(T|tango) ": Text("t"),
+        "(U|uniform) ": Text("u"),
+        "(V|victor) ": Text("v"),
+        "(W|whiskey) ": Text("w"),
+        "(X|x-ray) ": Text("x"),
+        "(Y|yankee) ": Text("y"),
+        "(Z|zulu) ": Text("z"),
+
         # Closures.
         "angle bracket": Key("langle"),
         "close angle bracket": Key("rangle"),
@@ -436,8 +478,8 @@ grammarCfg.cmd.map = Item(
         "single quote": Key("squote"),
 
         # Shorthand multiple characters.
-        "double <char>": Text("%(char)s%(char)s"),
-        "triple <char>": Text("%(char)s%(char)s%(char)s"),
+        "double <text>": Text("%(char)s%(char)s"),
+        "triple <text>": Text("%(char)s%(char)s%(char)s"),
         "double escape": Key("escape, escape"),  # Exiting menus.
 
         # Punctuation and separation characters, for quick editing.
@@ -447,6 +489,9 @@ grammarCfg.cmd.map = Item(
         "dot [<n>]": Key("dot:%(n)d"),
         "(dash|hyphen|minus) [<n>]": Key("hyphen:%(n)d"),
         "underscore [<n>]": Key("underscore:%(n)d"),
+        "plus": Text(" + "),
+        "bang": Text("!"),
+        "at": Text("@"),
 
         # Formatting <n> words to the left of the cursor.
         "camel case <n> [words]": Function(camel_case_count),
@@ -482,6 +527,7 @@ grammarCfg.cmd.map = Item(
     }
 )
 
+
 class KeystrokeRule(MappingRule):
     exported = False
     mapping = grammarCfg.cmd.map
@@ -489,14 +535,14 @@ class KeystrokeRule(MappingRule):
         IntegerRef("n", 1, 100),
         Dictation("text"),
         Dictation("text2"),
-        Choice("char", specialCharMap),
-        Choice("modifier1", modifierMap),
-        Choice("modifier2", modifierMap),
-        Choice("modifierSingle", singleModifierMap),
-        Choice("pressKey", pressKeyMap),
+        # Choice("char", specialCharMap),
+        # Choice("modifier1", modifierMap),
+        # Choice("modifier2", modifierMap),
+        # Choice("modifierSingle", singleModifierMap),
+        # Choice("pressKey", pressKeyMap),
         Choice("formatType", formatMap)
-        #Choice("abbreviation", abbreviationMap),
-        #Choice("reservedWord", reservedWord),
+        # Choice("abbreviation", abbreviationMap),
+        # Choice("reservedWord", reservedWord),
     ]
     defaults = {
         "n": 1,

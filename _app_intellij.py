@@ -86,7 +86,7 @@ grammarCfg.cmd.map = Item(
         "null": Text("null "),
         "package": Text("package "),
         "paren": Text("("),
-        "private": Text("private "),
+        "private <text>": Text("private ") + Function(lib.format.camel_case_text),
         "protected": Text("protected "),
         "public": Text("public "),
         "read only": Text("readonly "),
@@ -100,6 +100,7 @@ grammarCfg.cmd.map = Item(
         "try": Text("try {") + Key("enter") + Key("down:2") + Text("catch (err) {") + Key("enter") + Key("cs-m") + Key("up"),
         "type": Text("type "),
         "type of": Text("typeof"),
+        "undefined": Text("undefined"),
         "void": Text("void"),
         "while": Text("while () {") + Key("enter") + Key("cs-m") + Key("left:2"),
 
@@ -116,6 +117,14 @@ grammarCfg.cmd.map = Item(
 
         # symbols
         # plus,minus,and dot etc
+        "bar": Text(" | "),
+        "equal to": Text(" === "),
+        "equals": Text(" = "),
+        "greater than": Text(" > "),
+        "greater than or equal 2": Text(" >= "),
+        "less than": Text(" < "),
+        "less than or equal 2": Text(" <= "),
+        "not equal to": Text(" !== "),
 
         # editing
         # For writing words that would otherwise be characters or commands.
